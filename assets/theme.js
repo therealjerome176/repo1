@@ -130,7 +130,7 @@ const THEME_DEFS = {
         '--muted':   '#888899',
         '--border':  'rgba(0,0,0,0.08)',
         accent:      '#6366f1',
-        accentFg:    '#ffffff',
+        accentFg:    '#cbcbcb',
         heroImage:   null,
         bgImage:     null,
         particleColor: '#aaaacc',
