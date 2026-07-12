@@ -84,7 +84,7 @@ button { cursor: pointer; border: none; background: none; }
 .accent { color: var(--accent); }
 
 .site-nav { display: flex; align-items: center; gap: 3px; }
-.header-right { margin-left: auto; }
+.header-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
 
 .search-toggle {
     background: rgba(255,255,255,0.07);
