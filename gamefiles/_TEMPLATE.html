@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../favicon.png" id="favicon-link">
+    <title id="page-title">GAME TITLE — THE ARCADE EDITION</title>
+    <link rel="stylesheet" href="../assets/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Keep body full-height so the game fills the screen below the nav */
+        body  { overflow: hidden; height: 100vh; display: flex; flex-direction: column; margin: 0; padding: 0; }
+
+        /* ── Top nav bar (same as the hub) ── */
+        .game-nav {
+            background: #0f0f13;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 0 18px;
+            height: 60px;
+            flex-shrink: 0;
+            z-index: 100;
+        }
+        .game-nav-wordmark {
+            font-family: 'Outfit', sans-serif;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #eeeef2;
+            text-decoration: none;
+        }
+        .game-nav-wordmark span { color: #f4c401; }
+        .game-nav-sep   { color: rgba(255,255,255,0.18); font-size: 18px; }
+        .game-nav-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: #9090b0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            flex: 1;
+        }
+        .game-nav-btn {
+            font-family: 'Outfit', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            background: none;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 7px;
+            color: #7a7a9a;
+            padding: 6px 14px;
+            cursor: pointer;
+            transition: color 0.15s, border-color 0.15s, background 0.15s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .game-nav-btn:hover { color: #eeeef2; border-color: rgba(255,255,255,0.3); }
+        .game-nav-btn.expand-active {
+            background: rgba(244,196,1,0.1);
+            border-color: #f4c401;
+            color: #f4c401;
+        }
+
+        /* ── Game area ── */
+        .game-area {
+            flex: 1;
+            position: relative;
+            min-height: 0;
+            background: #000;
+        }
+        iframe, canvas, .game-embed {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* Expand mode hides nav */
+        body.expanded .game-nav { display: none; }
+        body.expanded .game-area { height: 100vh; }
+    </style>
+    <script src="../assets/disguise.js"></script>
+    <script src="../assets/theme.js"></script>
+</head>
+<body>
+
+<!-- ═══ NAV BAR ═══════════════════════════════════════════════════════════ -->
+<nav class="game-nav" id="game-nav">
+    <a class="game-nav-wordmark" href="../index.html">THE <span>ARCADE</span> EDITION</a>
+    <span class="game-nav-sep">/</span>
+    <span class="game-nav-title">GAME TITLE</span>
+    <a  class="game-nav-btn" href="../index.html">← Hub</a>
+    <button class="game-nav-btn" id="expand-btn" onclick="toggleExpand()">⛶ Expand</button>
+</nav>
+
+<!-- ═══ GAME AREA ═══════════════════════════════════════════════════════════ -->
+<div class="game-area" id="game-area">
+
+    <!--
+    ════════════════════════════════════════════════════════════
+     PASTE YOUR GAME CODE BELOW
+     Most games are one of these two patterns:
+
+     PATTERN A — iframe embed (most common):
+       <iframe src="https://your-game-url-here.com" allowfullscreen allow="autoplay; fullscreen; gamepad"></iframe>
+
+     PATTERN B — Unity WebGL:
+       Copy the Unity loader script tags here and replace the
+       <canvas> element with the Unity container div.
+
+     PATTERN C — Ruffle (Flash games):
+       <script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle"></script>
+       Then initialize Ruffle pointing at your .swf URL.
+    ════════════════════════════════════════════════════════════
+    -->
+
+    <iframe
+        src="PASTE_GAME_URL_HERE"
+        allowfullscreen
+        allow="autoplay; fullscreen; gamepad"
+    ></iframe>
+
+</div>
+
+<!-- ═══ SCRIPTS ═════════════════════════════════════════════════════════════ -->
+<script src="../games.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+let expanded = false;
+
+function toggleExpand() {
+    expanded = !expanded;
+    document.body.classList.toggle('expanded', expanded);
+    const btn = document.getElementById('expand-btn');
+    btn.textContent = expanded ? '⊡ Shrink' : '⛶ Expand';
+    btn.classList.toggle('expand-active', expanded);
+}
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && expanded) toggleExpand();
+});
+</script>
+
+</body>
+</html>
