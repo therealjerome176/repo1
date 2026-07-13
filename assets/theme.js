@@ -79,7 +79,7 @@ const THEME_DEFS = {
         '--surface2':'#2c1a0c',
         '--surface3':'#36200e',
         '--text':    '#f7f4f0',
-        '--muted':   '#c2979f',
+        '--muted':   '#ffffff',
         '--border':  'rgba(247,228,238,0.1)',
         accent:      '#A8534C',
         accentFg:    '#1a0a02',
