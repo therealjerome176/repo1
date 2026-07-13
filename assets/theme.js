@@ -124,8 +124,8 @@ const THEME_DEFS = {
     'simple-light': {
         '--bg':      '#ffffff',
         '--surface': '#f8f8fa',
-        '--surface2':'#5e5e63',
-        '--surface3':'#e8e8ee',
+        '--surface2':'#e8e8ee',
+        '--surface3':'#5e5e63',
         '--text':    '#313138',
         '--muted':   '#3f3f45',
         '--border':  'rgba(0,0,0,0.08)',
