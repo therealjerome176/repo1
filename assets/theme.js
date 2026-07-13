@@ -123,7 +123,7 @@ const THEME_DEFS = {
     },
     'simple-light': {
         '--bg':      '#ffffff',
-        '--surface': '#7e7e85',
+        '--surface': '#f8f8fa',
         '--surface2':'#e8e8ee',
         '--surface3':'#5e5e63',
         '--text':    '#313138',
