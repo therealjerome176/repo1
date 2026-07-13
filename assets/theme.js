@@ -127,7 +127,7 @@ const THEME_DEFS = {
         '--surface2':'#f0f0f4',
         '--surface3':'#e8e8ee',
         '--text':    '#313138',
-        '--muted':   '#ffffff',
+        '--muted':   '#3f3f45',
         '--border':  'rgba(0,0,0,0.08)',
         accent:      '#3f3f45',
         accentFg:    '#cbcbcb',
